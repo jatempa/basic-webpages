@@ -1,0 +1,193 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@import url(//fonts.googleapis.com/css?family=Syne);
+
+body {
+  font-family: 'Syne', sans-serif;
+  width: 90%;
+  max-width: 1400px;
+  margin: 3em auto;
+  background-color: #ecf4f3;
+  color: #3b3b3b;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  color: #006a71;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.header__title:hover {
+  color: #ff7e67;
+  cursor: pointer;
+}
+
+.header__profile-picture {
+  padding-right: 20px;
+}
+
+.post {
+  margin-bottom: 0.8em;
+  padding-top: 0.65em 0 0.65em;
+}
+
+.post__header {
+  padding: 0.5em 0;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.post__header-link {
+  text-decoration-line: none;
+  color: #006a71;
+}
+
+.post__header-link:hover {
+  color: #ff7e67;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: stretch;
+  text-align: center;
+}
+
+.sidebar__about-me,
+.sidebar__subscribe {
+  margin-bottom: 0.8em;
+}
+
+.sidebar__about-me-header,
+.sidebar__subscribe-header {
+  color: #006a71;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding-top: 0.75em;
+}
+
+.sidebar__about-me-paragraph {
+  text-align: left;
+  padding: 1em;
+}
+
+.sidebar__subscribe-register-form {
+  padding: 0.25em;
+}
+
+.sidebar__subscribe-register-form-email,
+.sidebar__subscribe-register-form-submit {
+  margin: 0.3em 0;
+  width: 95%;
+  height: 2em;
+}
+
+.sidebar__subscribe-register-form-email {
+  border: 1px solid #006a71;
+  outline: none;
+}
+
+.sidebar__subscribe-register-form-email:focus {
+  border: 1px solid #006a71;
+  outline: none;
+}
+
+.sidebar__subscribe-register-form-submit {
+  background-color: #ff7e67;
+  color: #ecf4f3;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 0;
+}
+
+.sidebar__subscribe-register-form-submit:hover {
+  color: #ecf4f3;
+  outline: none;
+  cursor: pointer;
+}
+
+.sidebar__subscribe-register-form-submit:focus {
+  outline: none;
+  cursor: pointer;
+}
+
+.subsections__article {
+  padding: 0 1em;
+}
+
+.subsections__article-header {
+  padding: 0.75em 0;
+  color: #006a71;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.subsections__article-header:hover {
+  color: #ff7e67;
+  cursor: pointer;
+}
+
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #006a71;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 721px) and (max-width: 900px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .header__profile-picture {
+    padding: 1em;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  body {
+    background-color: #ecf4f3;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .header__profile-picture {
+    padding: 1em;
+  }
+
+  .header,
+  .content,
+  .sidebar,
+  .subsections__article,
+  .footer {
+    background-color: #006a71;
+  }
+
+  .content {
+    padding: 1em;
+  }
+
+  .header__title,
+  .post__header-link,
+  .post__paragraph,
+  .sidebar__about-me-header,
+  .sidebar__about-me-paragraph,
+  .sidebar__subscribe-header,
+  .subsections__article-header,
+  .subsections__article-paragraph,
+  .footer {
+    color: #ecf4f3;
+  }
+}
