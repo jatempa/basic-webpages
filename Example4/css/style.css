@@ -9,6 +9,7 @@
   --secondary-color: #ebf5f0;
   --accent-color: #feca1b;
   --link-color: #1d9bf0;
+  --button-color: #3761a8;
 }
 
 html {
@@ -44,8 +45,8 @@ section#busqueda {
   gap: 20px;
 }
 
-section#busqueda input,
-section#busqueda button {
+section#busqueda input[type=text],
+section#busqueda button#search {
   font-size: 2rem;
   padding-top: 0;
   padding-bottom: 0;
@@ -53,29 +54,40 @@ section#busqueda button {
   max-height: 2.5em;
 }
 
-section#busqueda input {
+section#busqueda input[type=text] {
   padding-left: 10px;
   flex-basis: 80%;
   border: none;
 }
 
-section#busqueda input:focus {
+section#busqueda input[type=text]:focus {
   outline: none;
   border: 2px solid var(--link-color);
 }
 
-section#busqueda button {
-  flex-basis: 20%;
+section#busqueda button#search {
   border: none;
+  flex-basis: 20%;
   text-shadow: none;
   color: white;
   background-color: var(--primary-color);
 }
 
+section#busqueda button#search:hover {
+  background-color: var(--button-color);
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+section#busqueda button:focus {
+  border: none;
+  outline: none;
+}
+
 header {
   text-align: center;
   color: var(--accent-color);
-  text-shadow: 9px 3px #3761a8;
+  text-shadow: 9px 3px var(--button-color);
   font-size: 4rem;
   transform: rotate(-3.6deg);
   margin-top: 1.25em;
