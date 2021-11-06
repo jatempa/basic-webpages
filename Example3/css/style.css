@@ -1,0 +1,124 @@
+:root {
+  --bg-color: #fdf0d5;
+  --primary-color: #C1121F;
+  --secondary-color: #780000;
+  --accent-color: #003049;
+  --font-color: #669BBC;
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.85rem;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+header {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+div#heading {
+  height: 400px;
+  max-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section#description {
+  flex-basis: 50%;
+}
+
+section#description h1 {
+  font-size: 6.5rem;
+}
+
+div#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+section.info:first-of-type {
+  margin-top: 1.75em;
+}
+
+section.info {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 2em;
+  align-items: flex-start;
+}
+
+footer {
+  background-color: var(--accent-color);
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0;  
+}
+
+div#menu {
+  padding: 1.5em 0;
+  color: white;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+section.subsection {
+  flex-basis: 30%;
+  border-right: 2px white solid;
+  height: 200px;
+  max-height: 200px;
+}
+
+section.subsection:last-of-type {
+  border-right: none;
+}
+
+section.subsection ul {
+  padding: 0;
+}
+
+section.subsection ul li {
+  list-style: none;
+  font-size: 1.6rem;
+}
+
+@media screen and (max-width: 850px) {
+  div#heading {
+    height: 600px;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  #brandImage {
+    flex-basis: auto;
+  }
+
+  section#description {
+    flex-basis: auto;
+  }
+
+  section#description h1 {
+    text-align: center;
+  }
+
+  div#menu {
+    flex-direction: column;
+  }
+
+  section.subsection {
+    border-right: none;
+  }
+}
