@@ -38,6 +38,40 @@ a:hover {
   font-weight: bold;
 }
 
+section#busqueda {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+section#busqueda input,
+section#busqueda button {
+  font-size: 2rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 2.5em;
+  max-height: 2.5em;
+}
+
+section#busqueda input {
+  padding-left: 10px;
+  flex-basis: 80%;
+  border: none;
+}
+
+section#busqueda input:focus {
+  outline: none;
+  border: 2px solid var(--link-color);
+}
+
+section#busqueda button {
+  flex-basis: 20%;
+  border: none;
+  text-shadow: none;
+  color: white;
+  background-color: var(--primary-color);
+}
+
 header {
   text-align: center;
   color: var(--accent-color);
@@ -49,8 +83,11 @@ header {
 
 section {
   margin: 5em 0;
-  border: 5px var(--primary-color) solid;
   min-height: 300px;
+}
+
+main .container {
+  margin-top: 2.5em;
 }
 
 footer {
