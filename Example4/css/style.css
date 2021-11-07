@@ -110,6 +110,10 @@ article#result h2 {
   font-size: 6em;
 }
 
+article#result img {
+  width: 180px;
+}
+
 footer {
   position: fixed;
   bottom: 0;
