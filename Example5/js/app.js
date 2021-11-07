@@ -58,6 +58,7 @@ const PokeApp = () => {
   const handleSearch = (event) => {
     event.preventDefault()
     searchPokemon(name).then(setPokemon)
+    setName('')
   }
 
   return (
