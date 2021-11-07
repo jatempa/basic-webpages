@@ -31,17 +31,17 @@ const PokeApp = () => {
         <input type="text" value={name} onChange={handleChange} />
         <button id="search" onClick={handleSearch}>Buscar</button>
       </section>
-      <article id="result">
       {(pokemon)
-        ? (pokemon.error)
-          ? <h2>{pokemon?.error}</h2>
-          : <>
-              <h2>{pokemon?.name?.charAt(0).toUpperCase() + pokemon?.name?.slice(1)}</h2>
-              <img src={`${BASE_SPRITES_URL}/${pokemon.name}.png`} />
-            </>
+        ? <article id="result">
+            (pokemon.error)
+            ? <h2>{pokemon?.error}</h2>
+            : <> 
+                <h2>{pokemon?.name?.charAt(0).toUpperCase() + pokemon?.name?.slice(1)}</h2>
+                <img src={`${BASE_SPRITES_URL}/${pokemon.name}.png`} />
+              </>
+          </article>
         : null
       }
-      </article>
     </>
   )
 }
