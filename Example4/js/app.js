@@ -8,33 +8,25 @@ const pokemonResult = document.querySelector('article#result')
 
 const header = document.createElement('h2')
 const picture = document.createElement('img')
-const errorText = document.createElement('h2')
+
+pokemonResult.appendChild(header)
+pokemonResult.appendChild(picture)
 
 const search = function() {
-  
   const pokemonName = inputSearch.value;
 
   fetch(`${BASE_API_URL}/${pokemonName.toLowerCase()}`)
     .then(response => response.json())
     .then(result => {
       const pokemon = result;
-      // console.log(pokemon)
       const nameCapitalized = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)
 
       header.innerText = nameCapitalized
       picture.src = `${BASE_SPRITES_URL}/${pokemon.name}.png`
-      errorText.innerText = ''
-
-      pokemonResult.appendChild(header)
-      pokemonResult.appendChild(picture)
     })
     .catch((e) => {
-      header.innerText = ''
-      picture.src = null
-
-      errorText.innerText = 'No se encontraron resultados'
-
-      pokemonResult.appendChild(errorText)
+      header.innerText = 'No se encontraron resultados'
+      picture.src = ''
     })
 
   inputSearch.value = ''
