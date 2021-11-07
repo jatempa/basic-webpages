@@ -14,6 +14,41 @@ const searchPokemon = async (name) => {
   }
 }
 
+const SearchBar = ({name, handleChange, handleSearch}) => {
+  return (
+    <section id="searchBar">
+      <input type="text" value={name} onChange={handleChange} />
+      <button id="search" onClick={handleSearch}>Buscar</button>
+    </section>
+  )
+}
+
+const Result = ({name}) => {
+  const nameCapitalized = name?.charAt(0).toUpperCase() + name?.slice(1)
+  return (
+    <>
+      <h2>{nameCapitalized}</h2>
+      <img src={`${BASE_SPRITES_URL}/${name}.png`} />
+    </>
+  )
+}
+
+const Error = ({err}) => <h2>{err}</h2>
+
+const Pokemon = ({pokemon}) => {
+  if (!pokemon)
+    return null
+
+  return (
+    <article id="result">
+      {(pokemon.error)
+        ? <Error err={pokemon?.error} />
+        : <Result name={pokemon?.name} />
+      }
+    </article>
+  )
+}
+
 const PokeApp = () => {
   const [name, setName] = React.useState(() => '')
   const [pokemon, setPokemon] = React.useState(() => {})
@@ -27,21 +62,8 @@ const PokeApp = () => {
 
   return (
     <>
-      <section id="searchBar">
-        <input type="text" value={name} onChange={handleChange} />
-        <button id="search" onClick={handleSearch}>Buscar</button>
-      </section>
-      {(pokemon)
-        ? <article id="result">
-            (pokemon.error)
-            ? <h2>{pokemon?.error}</h2>
-            : <> 
-                <h2>{pokemon?.name?.charAt(0).toUpperCase() + pokemon?.name?.slice(1)}</h2>
-                <img src={`${BASE_SPRITES_URL}/${pokemon.name}.png`} />
-              </>
-          </article>
-        : null
-      }
+      <SearchBar name={name} handleChange={handleChange} handleSearch={handleSearch} />
+      <Pokemon pokemon={pokemon} />
     </>
   )
 }
