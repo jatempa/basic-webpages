@@ -4,6 +4,18 @@ const BASE_SPRITES_URL = 'https://img.pokemondb.net/sprites/home/normal'
 
 const rootElement = document.getElementById('root')
 
+const Header = () => (
+  <header>
+    <h1>Pokedex</h1>
+  </header>
+)
+
+const Footer = () => (
+  <footer>
+    <p>&copy; Jorge Atempa - <a href="https://twitter.com/atempa09">@atempa09</a></p>
+  </footer>
+)
+
 const searchPokemon = async (name) => {
   try {
     const response = await fetch(`${BASE_API_URL}/${name.toLowerCase()}`)
@@ -63,8 +75,14 @@ const PokeApp = () => {
 
   return (
     <>
-      <SearchBar name={name} handleChange={handleChange} handleSearch={handleSearch} />
-      <Pokemon pokemon={pokemon} />
+      <Header />
+      <main>
+        <div className="container">
+          <SearchBar name={name} handleChange={handleChange} handleSearch={handleSearch} />
+          <Pokemon pokemon={pokemon} />
+        </div>
+      </main>
+      <Footer />
     </>
   )
 }
