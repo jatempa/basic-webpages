@@ -44,16 +44,40 @@ const topicsList = [
   },
 ];
 
+function MyReact() {
+  return {
+    createElement: function (type, values) {
+      switch (type) {
+        case "article":
+          return `<article>${values}</article>`;
+        case "h3":
+          return `<h3 class=${values.className}>${values.children}</h3>`;
+        case "ul":
+          return `
+            <ul>
+              ${values.map((value) => `<li>${value}</li>`).join("")}
+            </ul>
+          `;
+      }
+    },
+  };
+}
+
 function createTopicList(strings, topics) {
+  const react = new MyReact();
+
   return topics
-    .map(
-      (topic) => `
-        <article>
-          <h3 class=${strings}>${topic.title}</h3>
-          <ul>
-            ${topic.topics.map((t) => `<li>${t}</li>`).join("")}
-          </ul>
-        </article>`
+    .map((topic) =>
+      react.createElement(
+        "article",
+        `
+          ${react.createElement("h3", {
+            children: topic.title,
+            className: strings,
+          })}
+          ${react.createElement("ul", topic.topics)}
+        `
+      )
     )
     .join("");
 }
