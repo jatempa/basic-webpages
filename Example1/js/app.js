@@ -82,6 +82,6 @@ function createTopicList(strings, topics) {
     .join("");
 }
 
-content.innerHTML = createTopicList("topic-title", topicsList);
+content.innerHTML = createTopicList`topic-title ${topicsList}`;
 
 main.appendChild(content);
