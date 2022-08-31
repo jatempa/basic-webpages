@@ -44,18 +44,20 @@ const topicsList = [
   },
 ];
 
-content.innerHTML = topicsList
-  .map((topic) => {
-    return `
-      <article>
-        <h3 class="topic-title">${topic.title}</h3>
-        <ul>
-          ${topic.topics.map((t) => `<li>${t}</li>`).join("")}
-        </ul>
-        </ul>
-      </article>
-  `;
-  })
-  .join("");
+function createTopicList(strings, topics) {
+  return topics
+    .map(
+      (topic) => `
+        <article>
+          <h3 class=${strings}>${topic.title}</h3>
+          <ul>
+            ${topic.topics.map((t) => `<li>${t}</li>`).join("")}
+          </ul>
+        </article>`
+    )
+    .join("");
+}
+
+content.innerHTML = createTopicList("topic-title", topicsList);
 
 main.appendChild(content);
