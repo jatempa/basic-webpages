@@ -1,5 +1,5 @@
-# portfolio
-Website samples
+# Basic Web Pages
+HTML-CSS-JS examples
 
 ### [Example 1 - Syllabus template](https://pwtemario.netlify.app/)
 
